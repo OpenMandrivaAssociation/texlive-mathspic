@@ -1,3 +1,9 @@
+# revision 23661
+# category Package
+# catalog-ctan /graphics/mathspic
+# catalog-date 2011-06-24 10:29:05 +0200
+# catalog-license lppl
+# catalog-version 1.13
 Name:		texlive-mathspic
 Version:	1.13
 Release:	1
@@ -63,6 +69,7 @@ new Perl version are available.
 %doc %{_texmfdistdir}/doc/latex/mathspic/sourcecode113.html
 %doc %{_texmfdistdir}/doc/latex/mathspic/sourcecode113.nw
 %doc %{_texmfdistdir}/doc/latex/mathspic/sourcecode113.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -77,3 +84,5 @@ pushd %{buildroot}%{_bindir}
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
