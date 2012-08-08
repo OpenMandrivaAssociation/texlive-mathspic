@@ -1,4 +1,4 @@
-# revision 23661
+# revision 26313
 # category Package
 # catalog-ctan /graphics/mathspic
 # catalog-date 2011-06-24 10:29:05 +0200
@@ -6,7 +6,7 @@
 # catalog-version 1.13
 Name:		texlive-mathspic
 Version:	1.13
-Release:	2
+Release:	3
 Summary:	A Perl filter program for use with PiCTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/mathspic
