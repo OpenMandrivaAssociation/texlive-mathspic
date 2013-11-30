@@ -1,4 +1,4 @@
-# revision 29845
+# revision 31957
 # category Package
 # catalog-ctan /graphics/mathspic
 # catalog-date 2012-05-21 15:40:40 +0200
@@ -6,7 +6,7 @@
 # catalog-version 1.13
 Name:		texlive-mathspic
 Version:	1.13
-Release:	4
+Release:	5
 Summary:	A Perl filter program for use with PiCTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/mathspic
@@ -54,12 +54,13 @@ new Perl version are available.
 %doc %{_texmfdistdir}/doc/latex/mathspic/mathsPICfigures.zip
 %doc %{_texmfdistdir}/doc/latex/mathspic/mathsPICmanual.pdf
 %doc %{_texmfdistdir}/doc/latex/mathspic/mathsPICmanual.zip
-%doc %{_texmfdistdir}/doc/latex/mathspic/mathspic.1
 %doc %{_texmfdistdir}/doc/latex/mathspic/mathspic.lib
 %doc %{_texmfdistdir}/doc/latex/mathspic/mathspic.sh
 %doc %{_texmfdistdir}/doc/latex/mathspic/sourcecode113.html
 %doc %{_texmfdistdir}/doc/latex/mathspic/sourcecode113.nw
 %doc %{_texmfdistdir}/doc/latex/mathspic/sourcecode113.pdf
+%doc %{_mandir}/man1/mathspic.1*
+%doc %{_texmfdistdir}/doc/man/man1/mathspic.man1.pdf
 
 #-----------------------------------------------------------------------
 %prep
@@ -74,3 +75,5 @@ pushd %{buildroot}%{_bindir}
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_mandir}/man1
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
