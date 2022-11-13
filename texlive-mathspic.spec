@@ -1,18 +1,12 @@
-# revision 31957
-# category Package
-# catalog-ctan /graphics/mathspic
-# catalog-date 2012-05-21 15:40:40 +0200
-# catalog-license lppl
-# catalog-version 1.13
 Name:		texlive-mathspic
-Version:	1.13
-Release:	16
+Version:	31957
+Release:	1
 Summary:	A Perl filter program for use with PiCTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/mathspic
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathspic.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathspic.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathspic.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathspic.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -35,12 +29,12 @@ the pain out of PiCTeX. Both the original DOS version and the
 new Perl version are available.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -64,14 +58,14 @@ new Perl version are available.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
-    ln -sf %{_texmfdistdir}/scripts/mathspic/mathspic.pl mathspic
+ln -sf %{_texmfdistdir}/scripts/mathspic/mathspic.pl mathspic
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
