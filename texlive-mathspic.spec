@@ -1,6 +1,6 @@
 Name:		texlive-mathspic
 Version:	31957
-Release:	1
+Release:	2
 Summary:	A Perl filter program for use with PiCTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/mathspic
