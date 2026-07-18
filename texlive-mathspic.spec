@@ -1,5 +1,6 @@
 %global tl_name mathspic
 %global tl_revision 79618
+%global tl_bin_links mathspic:%{_texmfdistdir}/scripts/mathspic/mathspic.pl
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -15,6 +16,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(mathspic.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 MathsPIC(Perl) is a development of the earlier MathsPIC(DOS) program,
